@@ -1,1449 +1,1548 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tirthan Mountainview Homestay</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
 
-      :root {
-        --forest: #1e3320;
-        --pine: #2b4a30;
-        --moss: #3d6645;
-        --meadow: #5c8a52;
-        --fern: #8fb885;
-        --mist: #c8dfc4;
-        --sky: #d4eaf7;
-        --deep-sky: #5a9ec9;
-        --snow: #f6f9f4;
-        --cloud: #edf4ea;
-        --cream: #faf6ee;
-        --sunshine: #e8b84b;
-        --amber: #c8922a;
-        --rust: #b85c28;
-        --bark: #7a4e2a;
-        --blush: #e8cdc8;
-        --rose: #c8827a;
-        --earth: #4a3020;
-        --text: #202818;
-        --text-soft: #445038;
-        --white: #fdfcfa;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tirthan Mountainview Homestay</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: "Jost", sans-serif;
-        background: var(--snow);
-        color: var(--text);
-        overflow-x: hidden;
-      }
+    :root {
+      --forest: #1e3320;
+      --pine: #2b4a30;
+      --moss: #3d6645;
+      --meadow: #5c8a52;
+      --fern: #8fb885;
+      --mist: #c8dfc4;
+      --sky: #d4eaf7;
+      --deep-sky: #5a9ec9;
+      --snow: #f6f9f4;
+      --cloud: #edf4ea;
+      --cream: #faf6ee;
+      --sunshine: #e8b84b;
+      --amber: #c8922a;
+      --rust: #b85c28;
+      --bark: #7a4e2a;
+      --blush: #e8cdc8;
+      --rose: #c8827a;
+      --earth: #4a3020;
+      --text: #202818;
+      --text-soft: #445038;
+      --white: #fdfcfa;
+    }
 
-      /* ════ NAV — deep forest ════ */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1.1rem 4rem;
-        background: rgba(27, 46, 28, 0.95);
-        backdrop-filter: blur(16px);
-        border-bottom: 1px solid rgba(232, 184, 75, 0.18);
-      }
-      .nav-logo {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.35rem;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        color: var(--cream);
-        text-decoration: none;
-      }
-      .nav-logo span {
-        color: var(--sunshine);
-      }
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-      }
-      .nav-links a {
-        font-size: 0.78rem;
-        font-weight: 400;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--mist);
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-      .nav-links a:hover {
-        color: var(--sunshine);
-      }
-      .nav-cta {
-        background: var(--sunshine);
-        color: var(--forest);
-        border: none;
-        padding: 0.55rem 1.6rem;
-        font-family: "Jost", sans-serif;
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        cursor: pointer;
-        border-radius: 30px;
-        transition: all 0.3s;
-        text-decoration: none;
-        box-shadow: 0 3px 14px rgba(232, 184, 75, 0.3);
-      }
-      .nav-cta:hover {
-        background: #f0cc6a;
-        transform: translateY(-1px);
-        box-shadow: 0 5px 20px rgba(232, 184, 75, 0.4);
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      /* ════ HERO — mountain sky + golden sun ════ */
-      .hero {
-        min-height: 100vh;
-        background:
-          linear-gradient(
-            170deg,
-            rgba(15, 30, 18, 0.5) 0%,
-            rgba(90, 158, 201, 0.1) 45%,
-            rgba(15, 30, 18, 0.72) 100%
-          ),
-          center/cover no-repeat;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 2rem;
-        position: relative;
-        overflow: hidden;
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        top: -20%;
-        right: -10%;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(
-          circle,
+    body {
+      font-family: "Jost", sans-serif;
+      background: var(--snow);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ════ NAV — deep forest ════ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 4rem;
+      background: rgba(27, 46, 28, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(232, 184, 75, 0.18);
+    }
+
+    .nav-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--sunshine);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mist);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--sunshine);
+    }
+
+    .nav-cta {
+      background: var(--sunshine);
+      color: var(--forest);
+      border: none;
+      padding: 0.55rem 1.6rem;
+      font-family: "Jost", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: all 0.3s;
+      text-decoration: none;
+      box-shadow: 0 3px 14px rgba(232, 184, 75, 0.3);
+    }
+
+    .nav-cta:hover {
+      background: #f0cc6a;
+      transform: translateY(-1px);
+      box-shadow: 0 5px 20px rgba(232, 184, 75, 0.4);
+    }
+
+    /* ════ HERO — mountain sky + golden sun ════ */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(170deg,
+          rgba(15, 30, 18, 0.5) 0%,
+          rgba(90, 158, 201, 0.1) 45%,
+          rgba(15, 30, 18, 0.72) 100%),
+        center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle,
           rgba(232, 184, 75, 0.1) 0%,
-          transparent 70%
-        );
-        pointer-events: none;
-      }
-      .hero-badge {
-        font-size: 0.7rem;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--sunshine);
-        margin-bottom: 1.2rem;
-        display: inline-block;
-        padding: 0.4rem 1.4rem;
-        border-radius: 30px;
-        border: 1px solid rgba(232, 184, 75, 0.35);
-        background: rgba(232, 184, 75, 0.08);
-        animation: fadeUp 0.8s ease both;
-      }
-      .hero h1 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(3rem, 8vw, 7rem);
-        font-weight: 300;
-        line-height: 1.05;
-        color: #f6f9f4;
-        text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
-        animation: fadeUp 0.9s 0.1s ease both;
-      }
-      .hero h1 em {
-        font-style: italic;
-        color: var(--sunshine);
-      }
-      /* tiny romantic touch — cursive sub */
-      .hero-sub {
-        font-family: "Cormorant Garamond", serif;
-        font-style: italic;
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        font-weight: 300;
-        color: rgba(246, 249, 244, 0.82);
-        margin-top: 1.2rem;
-        max-width: 500px;
-        line-height: 1.8;
-        animation: fadeUp 0.9s 0.2s ease both;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2.4rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        animation: fadeUp 0.9s 0.3s ease both;
-      }
-      .btn-primary {
-        background: var(--sunshine);
-        color: var(--forest);
-        padding: 0.85rem 2.4rem;
-        border: none;
-        border-radius: 30px;
-        font-family: "Jost", sans-serif;
-        font-size: 0.85rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all 0.3s;
-        text-decoration: none;
-        box-shadow: 0 4px 20px rgba(232, 184, 75, 0.35);
-      }
-      .btn-primary:hover {
-        background: #f0cc6a;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 28px rgba(232, 184, 75, 0.4);
-      }
-      .btn-outline {
-        background: transparent;
-        color: var(--snow);
-        padding: 0.85rem 2.4rem;
-        border: 1px solid rgba(246, 249, 244, 0.4);
-        border-radius: 30px;
-        font-family: "Jost", sans-serif;
-        font-size: 0.85rem;
-        font-weight: 300;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all 0.3s;
-        text-decoration: none;
-      }
-      .btn-outline:hover {
-        border-color: var(--sunshine);
-        color: var(--sunshine);
-      }
-      .hero-scroll {
-        position: absolute;
-        bottom: 2.2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        color: rgba(200, 223, 196, 0.6);
-        font-size: 0.68rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        animation: fadeIn 1.5s 1s both;
-      }
-      .scroll-line {
-        width: 1px;
-        height: 50px;
-        background: linear-gradient(
-          to bottom,
+          transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sunshine);
+      margin-bottom: 1.2rem;
+      display: inline-block;
+      padding: 0.4rem 1.4rem;
+      border-radius: 30px;
+      border: 1px solid rgba(232, 184, 75, 0.35);
+      background: rgba(232, 184, 75, 0.08);
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: #f6f9f4;
+      text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+      animation: fadeUp 0.9s 0.1s ease both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--sunshine);
+    }
+
+    /* tiny romantic touch — cursive sub */
+    .hero-sub {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      color: rgba(246, 249, 244, 0.82);
+      margin-top: 1.2rem;
+      max-width: 500px;
+      line-height: 1.8;
+      animation: fadeUp 0.9s 0.2s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 0.9s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--sunshine);
+      color: var(--forest);
+      padding: 0.85rem 2.4rem;
+      border: none;
+      border-radius: 30px;
+      font-family: "Jost", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(232, 184, 75, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #f0cc6a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(232, 184, 75, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--snow);
+      padding: 0.85rem 2.4rem;
+      border: 1px solid rgba(246, 249, 244, 0.4);
+      border-radius: 30px;
+      font-family: "Jost", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--sunshine);
+      color: var(--sunshine);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(200, 223, 196, 0.6);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: fadeIn 1.5s 1s both;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom,
           rgba(232, 184, 75, 0.7),
-          transparent
-        );
-        animation: scrollPulse 2s infinite;
-      }
+          transparent);
+      animation: scrollPulse 2s infinite;
+    }
 
-      /* ════ STRIP — meadow green ════ */
-      .strip {
-        background: var(--pine);
-        color: var(--mist);
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        flex-wrap: wrap;
-        padding: 1.3rem 2rem;
-        font-size: 0.76rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        border-bottom: 2px solid rgba(232, 184, 75, 0.15);
-      }
-      .strip-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-      .strip-icon {
-        font-size: 1rem;
-      }
+    /* ════ STRIP — meadow green ════ */
+    .strip {
+      background: var(--pine);
+      color: var(--mist);
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      padding: 1.3rem 2rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 2px solid rgba(232, 184, 75, 0.15);
+    }
 
-      /* ════ SECTION BASE ════ */
-      section {
-        padding: 6rem 4rem;
-      }
-      .section-label {
-        font-size: 0.7rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--meadow);
-        margin-bottom: 0.7rem;
-      }
-      .section-title {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        font-weight: 400;
-        line-height: 1.15;
-        color: var(--forest);
-      }
-      .section-title em {
-        font-style: italic;
-        color: var(--amber);
-      }
-      .section-divider {
-        width: 48px;
-        height: 2px;
-        background: linear-gradient(to right, var(--sunshine), var(--amber));
-        margin: 1.4rem 0;
-        border-radius: 2px;
-      }
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-      /* ════ ABOUT — warm cream + soft sunrise ════ */
-      .about {
-        background: linear-gradient(135deg, var(--cream) 0%, #f0ece0 100%);
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5rem;
-        align-items: center;
-      }
-      .about-text p {
-        font-size: 0.95rem;
-        line-height: 1.95;
-        color: var(--text-soft);
-        margin-bottom: 1rem;
-        font-weight: 300;
-      }
-      .about-img {
-        position: relative;
-      }
-      .about-img img {
-        width: 100%;
-        height: 420px;
-        object-fit: cover;
-        border-radius: 8px;
-        display: block;
-        box-shadow: 0 16px 50px rgba(30, 51, 32, 0.18);
-      }
-      .about-img-accent {
-        position: absolute;
-        bottom: -1.5rem;
-        right: -1.5rem;
-        width: 180px;
-        height: 140px;
-        background: center/cover;
-        border: 4px solid var(--cream);
-        border-radius: 6px;
-        box-shadow: 0 8px 24px rgba(30, 51, 32, 0.15);
-      }
-      .about-stats {
-        display: flex;
-        gap: 2.5rem;
-        margin-top: 2rem;
-      }
-      .stat-num {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 2.6rem;
-        font-weight: 300;
-        color: var(--forest);
-        line-height: 1;
-      }
-      .stat-label {
-        font-size: 0.7rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--meadow);
-        margin-top: 0.2rem;
-      }
+    .strip-icon {
+      font-size: 1rem;
+    }
 
-      /* ════ SERVICES — sky blue tint ════ */
-      .services {
-        background: linear-gradient(180deg, var(--sky) 0%, #e8f4f0 100%);
-        text-align: center;
-      }
-      .services .section-label {
-        color: var(--deep-sky);
-      }
-      .services .section-title {
-        color: var(--forest);
-      }
-      .services .section-divider {
-        margin: 1.4rem auto;
-      }
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin-top: 3.5rem;
-        text-align: left;
-      }
-      .service-card {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(8px);
-        padding: 2.2rem 2rem;
-        border-radius: 12px;
-        border-top: 3px solid transparent;
-        transition: all 0.3s;
-        cursor: default;
-        box-shadow: 0 2px 16px rgba(30, 51, 32, 0.07);
-      }
-      .service-card:hover {
-        border-top-color: var(--sunshine);
-        box-shadow: 0 14px 44px rgba(30, 51, 32, 0.13);
-        transform: translateY(-5px);
-      }
-      .service-icon {
-        font-size: 2rem;
-        margin-bottom: 1.2rem;
-        display: block;
-      }
-      .service-card h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: var(--forest);
-        margin-bottom: 0.6rem;
-      }
-      .service-card p {
-        font-size: 0.87rem;
-        line-height: 1.78;
-        color: var(--text-soft);
-        font-weight: 300;
-      }
-      .service-tag {
-        display: inline-block;
-        margin-top: 1rem;
-        font-size: 0.68rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--meadow);
-        border-bottom: 1px solid var(--fern);
-        padding-bottom: 2px;
-      }
+    /* ════ SECTION BASE ════ */
+    section {
+      padding: 6rem 4rem;
+    }
 
-      /* ════ ROOMS — warm snow white ════ */
-      .rooms {
-        background: var(--snow);
-      }
-      .rooms-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-      .room-card {
-        border-radius: 14px;
-        overflow: hidden;
-        background: var(--white);
-        box-shadow: 0 4px 24px rgba(30, 51, 32, 0.09);
-        transition: all 0.35s;
-      }
-      .room-card:hover {
-        box-shadow: 0 20px 55px rgba(30, 51, 32, 0.16);
-        transform: translateY(-5px);
-      }
-      .room-card img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        display: block;
-      }
-      .room-info {
-        padding: 1.6rem;
-      }
-      .room-info h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: var(--forest);
-      }
-      .room-info p {
-        font-size: 0.85rem;
-        color: var(--text-soft);
-        margin: 0.5rem 0 1rem;
-        line-height: 1.72;
-        font-weight: 300;
-      }
-      .room-price {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.6rem;
-        color: var(--amber);
-        font-weight: 400;
-      }
-      .room-price span {
-        font-family: "Jost", sans-serif;
-        font-size: 0.75rem;
-        color: #999;
-        font-weight: 300;
-      }
-      .room-amenities {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-        margin-top: 0.8rem;
-      }
-      .amenity-tag {
-        font-size: 0.67rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: var(--cloud);
-        color: var(--moss);
-        padding: 0.25rem 0.65rem;
-        border-radius: 20px;
-      }
-      .room-book {
-        display: block;
-        width: 100%;
-        margin-top: 1.2rem;
-        background: linear-gradient(135deg, var(--forest), var(--moss));
-        color: var(--cream);
-        border: none;
-        padding: 0.8rem;
-        font-family: "Jost", sans-serif;
-        font-size: 0.78rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        cursor: pointer;
-        border-radius: 30px;
-        transition: all 0.3s;
-        text-align: center;
-        text-decoration: none;
-        box-shadow: 0 3px 12px rgba(30, 51, 32, 0.2);
-      }
-      .room-book:hover {
-        background: linear-gradient(135deg, var(--moss), var(--meadow));
-        box-shadow: 0 6px 20px rgba(30, 51, 32, 0.28);
-      }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--meadow);
+      margin-bottom: 0.7rem;
+    }
 
-      /* ════ FOOD — deep forest + warm candlelight ════ */
-      .food {
-        background: linear-gradient(
-          135deg,
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--forest);
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(to right, var(--sunshine), var(--amber));
+      margin: 1.4rem 0;
+      border-radius: 2px;
+    }
+
+    /* ════ ABOUT — warm cream + soft sunrise ════ */
+    .about {
+      background: linear-gradient(135deg, var(--cream) 0%, #f0ece0 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 0.95rem;
+      line-height: 1.95;
+      color: var(--text-soft);
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .about-img {
+      position: relative;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 16px 50px rgba(30, 51, 32, 0.18);
+    }
+
+    .about-img-accent {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      width: 180px;
+      height: 140px;
+      background: center/cover;
+      border: 4px solid var(--cream);
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(30, 51, 32, 0.15);
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .stat-num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--forest);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--meadow);
+      margin-top: 0.2rem;
+    }
+
+    /* ════ SERVICES — sky blue tint ════ */
+    .services {
+      background: linear-gradient(180deg, var(--sky) 0%, #e8f4f0 100%);
+      text-align: center;
+    }
+
+    .services .section-label {
+      color: var(--deep-sky);
+    }
+
+    .services .section-title {
+      color: var(--forest);
+    }
+
+    .services .section-divider {
+      margin: 1.4rem auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      text-align: left;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 2.2rem 2rem;
+      border-radius: 12px;
+      border-top: 3px solid transparent;
+      transition: all 0.3s;
+      cursor: default;
+      box-shadow: 0 2px 16px rgba(30, 51, 32, 0.07);
+    }
+
+    .service-card:hover {
+      border-top-color: var(--sunshine);
+      box-shadow: 0 14px 44px rgba(30, 51, 32, 0.13);
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-card p {
+      font-size: 0.87rem;
+      line-height: 1.78;
+      color: var(--text-soft);
+      font-weight: 300;
+    }
+
+    .service-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--meadow);
+      border-bottom: 1px solid var(--fern);
+      padding-bottom: 2px;
+    }
+
+    /* ════ ROOMS — warm snow white ════ */
+    .rooms {
+      background: var(--snow);
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .room-card {
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 4px 24px rgba(30, 51, 32, 0.09);
+      transition: all 0.35s;
+    }
+
+    .room-card:hover {
+      box-shadow: 0 20px 55px rgba(30, 51, 32, 0.16);
+      transform: translateY(-5px);
+    }
+
+    .room-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .room-info {
+      padding: 1.6rem;
+    }
+
+    .room-info h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--forest);
+    }
+
+    .room-info p {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      margin: 0.5rem 0 1rem;
+      line-height: 1.72;
+      font-weight: 300;
+    }
+
+    .room-price {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      color: var(--amber);
+      font-weight: 400;
+    }
+
+    .room-price span {
+      font-family: "Jost", sans-serif;
+      font-size: 0.75rem;
+      color: #999;
+      font-weight: 300;
+    }
+
+    .room-amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+    }
+
+    .amenity-tag {
+      font-size: 0.67rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--cloud);
+      color: var(--moss);
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+    }
+
+    .room-book {
+      display: block;
+      width: 100%;
+      margin-top: 1.2rem;
+      background: linear-gradient(135deg, var(--forest), var(--moss));
+      color: var(--cream);
+      border: none;
+      padding: 0.8rem;
+      font-family: "Jost", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: all 0.3s;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 3px 12px rgba(30, 51, 32, 0.2);
+    }
+
+    .room-book:hover {
+      background: linear-gradient(135deg, var(--moss), var(--meadow));
+      box-shadow: 0 6px 20px rgba(30, 51, 32, 0.28);
+    }
+
+    /* ════ FOOD — deep forest + warm candlelight ════ */
+    .food {
+      background: linear-gradient(135deg,
           var(--forest) 0%,
           #1a3828 60%,
-          #2a3020 100%
-        );
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5rem;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-      }
-      .food::before {
-        content: "";
-        position: absolute;
-        bottom: -100px;
-        right: -100px;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(
-          circle,
+          #2a3020 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .food::before {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle,
           rgba(232, 184, 75, 0.08) 0%,
-          transparent 70%
-        );
-        pointer-events: none;
-      }
-      .food .section-label {
-        color: var(--sunshine);
-      }
-      .food .section-title {
-        color: var(--cream);
-      }
-      .food .section-title em {
-        color: var(--sunshine);
-      }
-      .food .section-divider {
-        background: linear-gradient(to right, var(--sunshine), var(--amber));
-      }
-      .food p {
-        font-size: 0.95rem;
-        line-height: 1.9;
-        color: rgba(200, 223, 196, 0.82);
-        font-weight: 300;
-        margin-bottom: 1rem;
-      }
-      .food-imgs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.8rem;
-      }
-      .food-imgs img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 8px;
-      }
-      .food-imgs img:first-child {
-        height: 200px;
-        grid-column: 1/-1;
-      }
-      .menu-items {
-        margin-top: 0.3rem;
-      }
-      .menu-item {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        padding: 0.6rem 0;
-        border-bottom: 1px solid rgba(200, 223, 196, 0.1);
-        font-size: 0.87rem;
-        color: rgba(200, 223, 196, 0.88);
-        font-weight: 300;
-      }
-      .menu-dot {
-        width: 6px;
-        height: 6px;
-        background: var(--sunshine);
-        border-radius: 50%;
-        flex-shrink: 0;
-      }
+          transparent 70%);
+      pointer-events: none;
+    }
 
-      /* ════ BOOKING — sky + cloud ════ */
-      .booking {
-        background: linear-gradient(180deg, var(--sky) 0%, #dff0e8 100%);
-        text-align: center;
-      }
-      .booking .section-label {
-        color: var(--deep-sky);
-      }
-      .booking .section-divider {
-        margin: 1.4rem auto;
-      }
-      .booking-form {
-        background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(10px);
-        border-radius: 16px;
-        padding: 2.5rem;
-        box-shadow: 0 12px 48px rgba(30, 51, 32, 0.12);
-        max-width: 860px;
-        margin: 3rem auto 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1rem;
-        align-items: end;
-      }
-      .form-group {
-        text-align: left;
-      }
-      .form-group label {
-        display: block;
-        font-size: 0.7rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--meadow);
-        margin-bottom: 0.5rem;
-      }
-      .form-group input,
-      .form-group select {
-        width: 100%;
-        padding: 0.75rem 1rem;
-        border: 1.5px solid var(--mist);
-        border-radius: 8px;
-        font-family: "Jost", sans-serif;
-        font-size: 0.88rem;
-        color: var(--text);
-        background: var(--snow);
-        outline: none;
-        transition:
-          border-color 0.3s,
-          box-shadow 0.3s;
-      }
-      .form-group input:focus,
-      .form-group select:focus {
-        border-color: var(--meadow);
-        box-shadow: 0 0 0 3px rgba(92, 138, 82, 0.1);
-      }
-      .form-submit {
-        background: linear-gradient(135deg, var(--forest), var(--moss));
-        color: var(--cream);
-        border: none;
-        padding: 0.8rem 1.8rem;
-        font-family: "Jost", sans-serif;
-        font-size: 0.82rem;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        cursor: pointer;
-        border-radius: 30px;
-        transition: all 0.3s;
-        white-space: nowrap;
-        box-shadow: 0 4px 16px rgba(30, 51, 32, 0.2);
-      }
-      .form-submit:hover {
-        background: linear-gradient(135deg, var(--moss), var(--meadow));
-        box-shadow: 0 6px 22px rgba(30, 51, 32, 0.28);
-        transform: translateY(-1px);
-      }
+    .food .section-label {
+      color: var(--sunshine);
+    }
 
-      /* ════ NEARBY — autumn greens + amber ════ */
-      .nearby {
-        background: linear-gradient(160deg, #e8f0e0 0%, var(--cream) 100%);
-      }
-      .nearby-intro {
-        font-size: 0.95rem;
-        line-height: 1.85;
-        color: var(--text-soft);
-        font-weight: 300;
-        max-width: 720px;
-        margin-bottom: 2.5rem;
-      }
-      .reach-strip {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem;
-        margin-bottom: 3.5rem;
-        background: linear-gradient(135deg, var(--forest), var(--pine));
-        border-radius: 14px;
-        padding: 1.8rem 2rem;
-        box-shadow: 0 8px 32px rgba(30, 51, 32, 0.15);
-      }
-      .reach-item {
-        display: flex;
-        gap: 1rem;
-        align-items: flex-start;
-      }
-      .reach-icon {
-        font-size: 1.4rem;
-        flex-shrink: 0;
-        margin-top: 0.1rem;
-      }
-      .reach-label {
-        font-size: 0.67rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--sunshine);
-        margin-bottom: 0.2rem;
-      }
-      .reach-val {
-        font-size: 0.82rem;
-        color: rgba(200, 223, 196, 0.85);
-        line-height: 1.5;
-        font-weight: 300;
-      }
-      .nearby-subtitle {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.6rem;
-        font-weight: 400;
-        color: var(--forest);
-        margin-bottom: 1.8rem;
-      }
-      .attractions-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.4rem;
-      }
-      .attraction-card {
-        background: rgba(255, 255, 255, 0.88);
-        backdrop-filter: blur(6px);
-        border-radius: 12px;
-        padding: 1.8rem 1.6rem;
-        border-left: 3px solid transparent;
-        transition: all 0.3s;
-        box-shadow: 0 2px 14px rgba(30, 51, 32, 0.07);
-      }
-      .attraction-card:hover {
-        border-left-color: var(--sunshine);
-        box-shadow: 0 12px 40px rgba(30, 51, 32, 0.14);
-        transform: translateY(-4px);
-      }
-      .attraction-card.featured {
-        grid-column: span 2;
-        background: linear-gradient(135deg, var(--forest), #1a3828);
-        border-left-color: var(--sunshine);
-      }
-      .attraction-card.featured h3 {
-        color: var(--cream);
-      }
-      .attraction-card.featured p {
-        color: rgba(200, 223, 196, 0.82);
-      }
-      .attraction-card.featured .attr-dist {
-        color: var(--sunshine);
-      }
-      .attr-badge {
-        display: inline-block;
-        background: var(--sunshine);
-        color: var(--forest);
-        font-size: 0.63rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 0.25rem 0.7rem;
-        border-radius: 20px;
-        margin-bottom: 0.8rem;
-        font-weight: 600;
-      }
-      .attr-emoji {
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-        display: block;
-      }
-      .attr-dist {
-        font-size: 0.7rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--meadow);
-        margin-bottom: 0.5rem;
-      }
-      .attraction-card h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: var(--forest);
-        margin-bottom: 0.5rem;
-      }
-      .attraction-card p {
-        font-size: 0.84rem;
-        line-height: 1.75;
-        color: var(--text-soft);
-        font-weight: 300;
-      }
-      .attr-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-        margin-top: 1rem;
-      }
-      .attr-tags span {
-        font-size: 0.63rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: var(--cloud);
-        color: var(--moss);
-        padding: 0.2rem 0.6rem;
-        border-radius: 20px;
-      }
-      .attraction-card.featured .attr-tags span {
-        background: rgba(200, 223, 196, 0.15);
-        color: var(--mist);
-      }
+    .food .section-title {
+      color: var(--cream);
+    }
 
-      /* ════ GALLERY — pure snow white ════ */
-      .gallery {
-        background: var(--white);
-      }
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        grid-template-rows: 220px 220px;
-        gap: 1rem;
-        margin-top: 3rem;
-      }
-      .gallery-grid img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-        display: block;
-        transition:
-          opacity 0.3s,
-          transform 0.4s,
-          box-shadow 0.3s;
-      }
-      .gallery-grid img:hover {
-        opacity: 0.9;
-        transform: scale(1.02);
-        box-shadow: 0 12px 36px rgba(30, 51, 32, 0.18);
-      }
-      .gallery-grid img:first-child {
-        grid-row: 1/3;
-      }
+    .food .section-title em {
+      color: var(--sunshine);
+    }
 
-      /* ════ CONTACT — pine + romantic blush tones ════ */
-      .contact {
-        background: linear-gradient(
-          135deg,
+    .food .section-divider {
+      background: linear-gradient(to right, var(--sunshine), var(--amber));
+    }
+
+    .food p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: rgba(200, 223, 196, 0.82);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .food-imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .food-imgs img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .food-imgs img:first-child {
+      height: 200px;
+      grid-column: 1/-1;
+    }
+
+    .menu-items {
+      margin-top: 0.3rem;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(200, 223, 196, 0.1);
+      font-size: 0.87rem;
+      color: rgba(200, 223, 196, 0.88);
+      font-weight: 300;
+    }
+
+    .menu-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--sunshine);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ════ BOOKING — sky + cloud ════ */
+    .booking {
+      background: linear-gradient(180deg, var(--sky) 0%, #dff0e8 100%);
+      text-align: center;
+    }
+
+    .booking .section-label {
+      color: var(--deep-sky);
+    }
+
+    .booking .section-divider {
+      margin: 1.4rem auto;
+    }
+
+    .booking-form {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 12px 48px rgba(30, 51, 32, 0.12);
+      max-width: 860px;
+      margin: 3rem auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      align-items: end;
+    }
+
+    .form-group {
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--meadow);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--mist);
+      border-radius: 8px;
+      font-family: "Jost", sans-serif;
+      font-size: 0.88rem;
+      color: var(--text);
+      background: var(--snow);
+      outline: none;
+      transition:
+        border-color 0.3s,
+        box-shadow 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--meadow);
+      box-shadow: 0 0 0 3px rgba(92, 138, 82, 0.1);
+    }
+
+    .form-submit {
+      background: linear-gradient(135deg, var(--forest), var(--moss));
+      color: var(--cream);
+      border: none;
+      padding: 0.8rem 1.8rem;
+      font-family: "Jost", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: all 0.3s;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(30, 51, 32, 0.2);
+    }
+
+    .form-submit:hover {
+      background: linear-gradient(135deg, var(--moss), var(--meadow));
+      box-shadow: 0 6px 22px rgba(30, 51, 32, 0.28);
+      transform: translateY(-1px);
+    }
+
+    /* ════ NEARBY — autumn greens + amber ════ */
+    .nearby {
+      background: linear-gradient(160deg, #e8f0e0 0%, var(--cream) 100%);
+    }
+
+    .nearby-intro {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-soft);
+      font-weight: 300;
+      max-width: 720px;
+      margin-bottom: 2.5rem;
+    }
+
+    .reach-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+      background: linear-gradient(135deg, var(--forest), var(--pine));
+      border-radius: 14px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 8px 32px rgba(30, 51, 32, 0.15);
+    }
+
+    .reach-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .reach-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .reach-label {
+      font-size: 0.67rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sunshine);
+      margin-bottom: 0.2rem;
+    }
+
+    .reach-val {
+      font-size: 0.82rem;
+      color: rgba(200, 223, 196, 0.85);
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    .nearby-subtitle {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--forest);
+      margin-bottom: 1.8rem;
+    }
+
+    .attractions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .attraction-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(6px);
+      border-radius: 12px;
+      padding: 1.8rem 1.6rem;
+      border-left: 3px solid transparent;
+      transition: all 0.3s;
+      box-shadow: 0 2px 14px rgba(30, 51, 32, 0.07);
+    }
+
+    .attraction-card:hover {
+      border-left-color: var(--sunshine);
+      box-shadow: 0 12px 40px rgba(30, 51, 32, 0.14);
+      transform: translateY(-4px);
+    }
+
+    .attraction-card.featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, var(--forest), #1a3828);
+      border-left-color: var(--sunshine);
+    }
+
+    .attraction-card.featured h3 {
+      color: var(--cream);
+    }
+
+    .attraction-card.featured p {
+      color: rgba(200, 223, 196, 0.82);
+    }
+
+    .attraction-card.featured .attr-dist {
+      color: var(--sunshine);
+    }
+
+    .attr-badge {
+      display: inline-block;
+      background: var(--sunshine);
+      color: var(--forest);
+      font-size: 0.63rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .attr-emoji {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .attr-dist {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--meadow);
+      margin-bottom: 0.5rem;
+    }
+
+    .attraction-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+
+    .attraction-card p {
+      font-size: 0.84rem;
+      line-height: 1.75;
+      color: var(--text-soft);
+      font-weight: 300;
+    }
+
+    .attr-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+
+    .attr-tags span {
+      font-size: 0.63rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--cloud);
+      color: var(--moss);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+    }
+
+    .attraction-card.featured .attr-tags span {
+      background: rgba(200, 223, 196, 0.15);
+      color: var(--mist);
+    }
+
+    /* ════ GALLERY — pure snow white ════ */
+    .gallery {
+      background: var(--white);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 220px 220px;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      transition:
+        opacity 0.3s,
+        transform 0.4s,
+        box-shadow 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+      box-shadow: 0 12px 36px rgba(30, 51, 32, 0.18);
+    }
+
+    .gallery-grid img:first-child {
+      grid-row: 1/3;
+    }
+
+    /* ════ CONTACT — pine + romantic blush tones ════ */
+    .contact {
+      background: linear-gradient(135deg,
           var(--forest) 0%,
           #1c3528 50%,
-          #2a2820 100%
-        );
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5rem;
-        position: relative;
-        overflow: hidden;
-      }
-      /* subtle romantic rose glow */
-      .contact::after {
-        content: "";
-        position: absolute;
-        top: -80px;
-        left: -80px;
-        width: 350px;
-        height: 350px;
-        background: radial-gradient(
-          circle,
+          #2a2820 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle romantic rose glow */
+    .contact::after {
+      content: "";
+      position: absolute;
+      top: -80px;
+      left: -80px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle,
           rgba(200, 130, 122, 0.06) 0%,
-          transparent 70%
-        );
-        pointer-events: none;
-      }
-      .contact .section-label {
-        color: var(--sunshine);
-      }
-      .contact .section-title {
-        color: var(--cream);
-      }
-      .contact .section-title em {
-        color: var(--sunshine);
-      }
-      .contact .section-divider {
-        background: linear-gradient(to right, var(--sunshine), var(--amber));
-      }
-      .contact-info {
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.4rem;
-      }
-      .contact-item {
-        display: flex;
-        gap: 1rem;
-        align-items: flex-start;
-      }
-      .contact-icon {
-        font-size: 1.2rem;
-        color: var(--sunshine);
-        margin-top: 0.1rem;
-        flex-shrink: 0;
-      }
-      .contact-item h4 {
-        font-size: 0.7rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--fern);
-        margin-bottom: 0.25rem;
-      }
-      .contact-item p {
-        font-size: 0.9rem;
-        color: rgba(200, 223, 196, 0.85);
-        font-weight: 300;
-        line-height: 1.6;
-      }
-      .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .contact-form input,
-      .contact-form textarea {
-        background: rgba(255, 255, 255, 0.07);
-        border: 1.5px solid rgba(200, 223, 196, 0.18);
-        border-radius: 8px;
-        padding: 0.85rem 1rem;
-        font-family: "Jost", sans-serif;
-        font-size: 0.88rem;
-        color: var(--mist);
-        outline: none;
-        transition:
-          border-color 0.3s,
-          background 0.3s;
-      }
-      .contact-form input::placeholder,
-      .contact-form textarea::placeholder {
-        color: rgba(200, 223, 196, 0.38);
-      }
-      .contact-form input:focus,
-      .contact-form textarea:focus {
-        border-color: var(--sunshine);
-        background: rgba(255, 255, 255, 0.1);
-      }
-      .contact-form textarea {
-        resize: vertical;
-        min-height: 110px;
-      }
-      .contact-submit {
-        background: linear-gradient(135deg, var(--sunshine), var(--amber));
-        color: var(--forest);
-        border: none;
-        padding: 0.85rem;
-        font-family: "Jost", sans-serif;
-        font-size: 0.82rem;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        cursor: pointer;
-        border-radius: 30px;
-        transition: all 0.3s;
-        box-shadow: 0 4px 16px rgba(232, 184, 75, 0.25);
-      }
-      .contact-submit:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 7px 24px rgba(232, 184, 75, 0.35);
+          transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact .section-label {
+      color: var(--sunshine);
+    }
+
+    .contact .section-title {
+      color: var(--cream);
+    }
+
+    .contact .section-title em {
+      color: var(--sunshine);
+    }
+
+    .contact .section-divider {
+      background: linear-gradient(to right, var(--sunshine), var(--amber));
+    }
+
+    .contact-info {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      font-size: 1.2rem;
+      color: var(--sunshine);
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fern);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-item p {
+      font-size: 0.9rem;
+      color: rgba(200, 223, 196, 0.85);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1.5px solid rgba(200, 223, 196, 0.18);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      font-family: "Jost", sans-serif;
+      font-size: 0.88rem;
+      color: var(--mist);
+      outline: none;
+      transition:
+        border-color 0.3s,
+        background 0.3s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(200, 223, 196, 0.38);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--sunshine);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .contact-submit {
+      background: linear-gradient(135deg, var(--sunshine), var(--amber));
+      color: var(--forest);
+      border: none;
+      padding: 0.85rem;
+      font-family: "Jost", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 16px rgba(232, 184, 75, 0.25);
+    }
+
+    .contact-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 7px 24px rgba(232, 184, 75, 0.35);
+    }
+
+    /* ════ FOOTER — deep forest ════ */
+    footer {
+      background: #0e1e10;
+      color: rgba(200, 223, 196, 0.45);
+      text-align: center;
+      padding: 2.2rem 2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      border-top: 1px solid rgba(232, 184, 75, 0.1);
+    }
+
+    footer strong {
+      color: var(--sunshine);
+    }
+
+    /* tiny romantic touch in footer */
+    footer .heart {
+      color: var(--rose);
+      font-size: 0.9rem;
+    }
+
+    /* ════ ANIMATIONS ════ */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
       }
 
-      /* ════ FOOTER — deep forest ════ */
-      footer {
-        background: #0e1e10;
-        color: rgba(200, 223, 196, 0.45);
-        text-align: center;
-        padding: 2.2rem 2rem;
-        font-size: 0.78rem;
-        letter-spacing: 0.06em;
-        border-top: 1px solid rgba(232, 184, 75, 0.1);
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      footer strong {
-        color: var(--sunshine);
-      }
-      /* tiny romantic touch in footer */
-      footer .heart {
-        color: var(--rose);
-        font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
       }
 
-      /* ════ ANIMATIONS ════ */
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(24px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      to {
+        opacity: 1;
       }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      @keyframes scrollPulse {
-        0%,
-        100% {
-          opacity: 0.5;
-        }
-        50% {
-          opacity: 1;
-        }
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: 0.5;
       }
 
-      /* ════ RESPONSIVE ════ */
-      @media (max-width: 900px) {
-        nav {
-          padding: 1rem 1.5rem;
-        }
-        .nav-links {
-          display: none;
-        }
-        section {
-          padding: 4rem 1.5rem;
-        }
-        .about,
-        .food,
-        .contact {
-          grid-template-columns: 1fr;
-          gap: 2.5rem;
-        }
-        .about-img-accent {
-          display: none;
-        }
-        .booking-form {
-          grid-template-columns: 1fr 1fr;
-        }
-        .gallery-grid {
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: auto;
-        }
-        .gallery-grid img:first-child {
-          grid-row: auto;
-        }
-        .attraction-card.featured {
-          grid-column: span 1;
-        }
-        .reach-strip {
-          padding: 1.4rem 1rem;
-        }
+      50% {
+        opacity: 1;
       }
-      @media (max-width: 560px) {
-        .booking-form {
-          grid-template-columns: 1fr;
-        }
+    }
+
+    /* ════ RESPONSIVE ════ */
+    @media (max-width: 900px) {
+      nav {
+        padding: 1rem 1.5rem;
       }
-    </style>
-  </head>
-  <body>
-    <!-- NAV -->
-    <nav>
-      <a href="#" class="nav-logo">Tirthan <span>Mountainview</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#rooms">Rooms</a></li>
-        <li><a href="#food">Food</a></li>
-        <li><a href="#nearby">Explore</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <a href="#booking" class="nav-cta">Book Now</a>
-    </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <p class="hero-badge">✦ Tirthan Valley, Himachal Pradesh ✦</p>
-      <h1>Wake Up to the<br /><em>Mountains</em></h1>
-      <p class="hero-sub">
-        Where the mountains whisper, the river sings, and every sunrise feels
-        like it was made just for you.
-      </p>
-      <div class="hero-actions">
-        <a href="#booking" class="btn-primary">Reserve a Room</a>
-        <a href="#about" class="btn-outline">Explore More</a>
-      </div>
-      <div class="hero-scroll">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
+      .nav-links {
+        display: none;
+      }
 
-    <!-- STRIP -->
-    <div class="strip">
-      <div class="strip-item">
-        <span class="strip-icon">🏔️</span> Mountain Views
-      </div>
-      <div class="strip-item">
-        <span class="strip-icon">🌿</span> Organic Home-Cooked Food
-      </div>
-      <div class="strip-item">
-        <span class="strip-icon">🛖</span> Cozy Rooms
-      </div>
-      <div class="strip-item">
-        <span class="strip-icon">🐠</span> Tirthan River Walks
-      </div>
-      <div class="strip-item">
-        <span class="strip-icon">⭐</span> 4.9 / 5 Guest Rating
-      </div>
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .about,
+      .food,
+      .contact {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .about-img-accent {
+        display: none;
+      }
+
+      .booking-form {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      .gallery-grid img:first-child {
+        grid-row: auto;
+      }
+
+      .attraction-card.featured {
+        grid-column: span 1;
+      }
+
+      .reach-strip {
+        padding: 1.4rem 1rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .booking-form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Tirthan <span>Mountainview</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#food">Food</a></li>
+      <li><a href="#nearby">Explore</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#booking" class="nav-cta">Book Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <p class="hero-badge">✦ Tirthan Valley, Himachal Pradesh ✦</p>
+    <h1>Wake Up to the<br /><em>Mountains</em></h1>
+    <p class="hero-sub">
+      Where the mountains whisper, the river sings, and every sunrise feels
+      like it was made just for you.
+    </p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">Reserve a Room</a>
+      <a href="#about" class="btn-outline">Explore More</a>
     </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <div class="about-text">
-        <p class="section-label">Our Story</p>
-        <h2 class="section-title">A Home <em>Away</em><br />from Home</h2>
-        <div class="section-divider"></div>
-        <p>
-          <em
-            style="
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="strip-item">
+      <span class="strip-icon">🏔️</span> Mountain Views
+    </div>
+    <div class="strip-item">
+      <span class="strip-icon">🌿</span> Organic Home-Cooked Food
+    </div>
+    <div class="strip-item">
+      <span class="strip-icon">🛖</span> Cozy Rooms
+    </div>
+    <div class="strip-item">
+      <span class="strip-icon">🐠</span> Tirthan River Walks
+    </div>
+    <div class="strip-item">
+      <span class="strip-icon">⭐</span> 4.9 / 5 Guest Rating
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <p class="section-label">Our Story</p>
+      <h2 class="section-title">A Home <em>Away</em><br />from Home</h2>
+      <div class="section-divider"></div>
+      <p>
+        <em style="
               font-family: &quot;Cormorant Garamond&quot;, serif;
               color: var(--amber);
               font-size: 1rem;
-            "
-            >A place where time slows down and the mountains feel like home.</em
-          >
-        </p>
-        <p>
-          Tucked away in the serene Tirthan Valley, our family-run homestay
-          offers an authentic Himachali experience. We believe that travel is
-          most meaningful when it's personal — which is why every guest is
-          treated as family.
-        </p>
-        <p>
-          From hand-picked rooms with panoramic mountain views to meals cooked
-          fresh from our kitchen garden, everything here is crafted with love
-          and intention.
-        </p>
-        <div class="about-stats">
-          <div>
-            <div class="stat-num">12+</div>
-            <div class="stat-label">Years Hosting</div>
-          </div>
-          <div>
-            <div class="stat-num">6</div>
-            <div class="stat-label">Cozy Rooms</div>
-          </div>
-          <div>
-            <div class="stat-num">500+</div>
-            <div class="stat-label">Happy Guests</div>
-          </div>
+            ">A place where time slows down and the mountains feel like home.</em>
+      </p>
+      <p>
+        Tucked away in the serene Tirthan Valley, our family-run homestay
+        offers an authentic Himachali experience. We believe that travel is
+        most meaningful when it's personal — which is why every guest is
+        treated as family.
+      </p>
+      <p>
+        From hand-picked rooms with panoramic mountain views to meals cooked
+        fresh from our kitchen garden, everything here is crafted with love
+        and intention.
+      </p>
+      <div class="about-stats">
+        <div>
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Years Hosting</div>
+        </div>
+        <div>
+          <div class="stat-num">6</div>
+          <div class="stat-label">Cozy Rooms</div>
+        </div>
+        <div>
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Happy Guests</div>
         </div>
       </div>
-      <div class="about-img">
-        <img
-          src="assets/images/homestay_exterior.png"
-          alt="Homestay exterior"
-        />
-        <div class="about-img-accent"></div>
-      </div>
-    </section>
+    </div>
+    <div class="about-img">
+      <img src="assets/images/homestay_exterior.png" alt="Homestay exterior" />
+      <div class="about-img-accent"></div>
+    </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section class="services" id="services">
-      <p class="section-label">What We Offer</p>
-      <h2 class="section-title">
-        Everything You Need<br />for a <em>Perfect Stay</em>
-      </h2>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-title">
+      Everything You Need<br />for a <em>Perfect Stay</em>
+    </h2>
+    <div class="section-divider"></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🛏️</span>
+        <h3>Room Booking</h3>
+        <p>
+          Choose from our carefully curated rooms — each offering stunning
+          valley or mountain views, fresh linen, and warm Himalayan décor.
+          Perfect for couples, families, and solo travellers.
+        </p>
+        <span class="service-tag">6 Room Options</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🍽️</span>
+        <h3>Home-Cooked Meals</h3>
+        <p>
+          Enjoy authentic Himachali cuisine made fresh every day. From hot
+          paranthas at sunrise to hearty dinners by the fireplace — we feed
+          your body and soul.
+        </p>
+        <span class="service-tag">Breakfast · Lunch · Dinner</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🥾</span>
+        <h3>Nature Treks</h3>
+        <p>
+          We arrange guided walks and treks through the GHNP buffer zone,
+          river trails, and nearby villages. Suitable for all fitness levels,
+          from morning strolls to full-day hikes.
+        </p>
+        <span class="service-tag">Guided Trails</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🎣</span>
+        <h3>Trout Fishing</h3>
+        <p>
+          The Tirthan River is famous for its crystal-clear waters and trout.
+          We help arrange fishing permits and guide you to the best spots —
+          catch and release style.
+        </p>
+        <span class="service-tag">By Arrangement</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🚗</span>
+        <h3>Local Transfers</h3>
+        <p>
+          Pickup from Aut or Bhuntar, day tours to Jalori Pass, Serolsar Lake,
+          and beyond. We take care of logistics so you can enjoy every moment.
+        </p>
+        <span class="service-tag">On Request</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🔥</span>
+        <h3>Bonfire & Chill Parties 🎉</h3>
+        <p>
+          End your day with a crackling bonfire under a sky full of stars. Our
+          host loves good company — if you're up for a fun evening, she's in
+          too. Music, laughter, drinks, and real Himachali warmth. Guests are
+          welcome to bring their own drinks and we'll make sure the night is
+          one you won't forget.
+        </p>
+        <span class="service-tag">Bonfire · Music · Good Vibes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section class="rooms" id="rooms">
+    <p class="section-label">Accommodation</p>
+    <h2 class="section-title">Our <em>Rooms</em></h2>
+    <div class="section-divider"></div>
+    <div class="rooms-grid">
+      <div class="room-card">
+        <img src="assets/images/valley_view_room.jpg" alt="Valley View Room" />
+        <div class="room-info">
+          <h3>Valley View Room</h3>
+          <p>
+            Spacious double room with a private balcony overlooking the
+            Tirthan Valley. Perfect for couples seeking a peaceful retreat.
+          </p>
+          <div class="room-amenities">
+            <span class="amenity-tag">Balcony</span>
+            <span class="amenity-tag">Mountain View</span>
+            <span class="amenity-tag">Hot Water</span>
+            <span class="amenity-tag">WiFi</span>
+          </div>
+          <div class="room-price">₹2,500 <span>/ night</span></div>
+          <a href="#booking" class="room-book">Book This Room</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="assets/images/forest_cottage.jpg" alt="Forest Cottage" />
+        <div class="room-info">
+          <h3>Forest Cottage</h3>
+          <p>
+            A semi-detached wooden cottage nestled among apple and walnut
+            trees — intimate, rustic, and incredibly cosy.
+          </p>
+          <div class="room-amenities">
+            <span class="amenity-tag">Cottage</span>
+            <span class="amenity-tag">Private</span>
+            <span class="amenity-tag">Fireplace</span>
+            <span class="amenity-tag">Hot Water</span>
+          </div>
+          <div class="room-price">₹3,200 <span>/ night</span></div>
+          <a href="#booking" class="room-book">Book This Room</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="assets/images/family_suite.jpg" alt="Family Suite" />
+        <div class="room-info">
+          <h3>Family Suite</h3>
+          <p>
+            A large interconnected suite ideal for families, with two
+            bedrooms, a sitting area, and a shared balcony with river views.
+          </p>
+          <div class="room-amenities">
+            <span class="amenity-tag">2 Bedrooms</span>
+            <span class="amenity-tag">River View</span>
+            <span class="amenity-tag">Sitting Area</span>
+            <span class="amenity-tag">WiFi</span>
+          </div>
+          <div class="room-price">₹4,500 <span>/ night</span></div>
+          <a href="#booking" class="room-book">Book This Room</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD -->
+  <section class="food" id="food">
+    <div>
+      <p class="section-label">Food & Dining</p>
+      <h2 class="section-title">Flavours of the<br /><em>Mountains</em></h2>
       <div class="section-divider"></div>
-      <div class="services-grid">
-        <div class="service-card">
-          <span class="service-icon">🛏️</span>
-          <h3>Room Booking</h3>
-          <p>
-            Choose from our carefully curated rooms — each offering stunning
-            valley or mountain views, fresh linen, and warm Himalayan décor.
-            Perfect for couples, families, and solo travellers.
-          </p>
-          <span class="service-tag">6 Room Options</span>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🍽️</span>
-          <h3>Home-Cooked Meals</h3>
-          <p>
-            Enjoy authentic Himachali cuisine made fresh every day. From hot
-            paranthas at sunrise to hearty dinners by the fireplace — we feed
-            your body and soul.
-          </p>
-          <span class="service-tag">Breakfast · Lunch · Dinner</span>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🥾</span>
-          <h3>Nature Treks</h3>
-          <p>
-            We arrange guided walks and treks through the GHNP buffer zone,
-            river trails, and nearby villages. Suitable for all fitness levels,
-            from morning strolls to full-day hikes.
-          </p>
-          <span class="service-tag">Guided Trails</span>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🎣</span>
-          <h3>Trout Fishing</h3>
-          <p>
-            The Tirthan River is famous for its crystal-clear waters and trout.
-            We help arrange fishing permits and guide you to the best spots —
-            catch and release style.
-          </p>
-          <span class="service-tag">By Arrangement</span>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🚗</span>
-          <h3>Local Transfers</h3>
-          <p>
-            Pickup from Aut or Bhuntar, day tours to Jalori Pass, Serolsar Lake,
-            and beyond. We take care of logistics so you can enjoy every moment.
-          </p>
-          <span class="service-tag">On Request</span>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🔥</span>
-          <h3>Bonfire & Chill Parties 🎉</h3>
-          <p>
-            End your day with a crackling bonfire under a sky full of stars. Our
-            host loves good company — if you're up for a fun evening, she's in
-            too. Music, laughter, drinks, and real Himachali warmth. Guests are
-            welcome to bring their own drinks and we'll make sure the night is
-            one you won't forget.
-          </p>
-          <span class="service-tag">Bonfire · Music · Good Vibes</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ROOMS -->
-    <section class="rooms" id="rooms">
-      <p class="section-label">Accommodation</p>
-      <h2 class="section-title">Our <em>Rooms</em></h2>
-      <div class="section-divider"></div>
-      <div class="rooms-grid">
-        <div class="room-card">
-          <img
-          src="assets/images/valley_view_room.jpg"    
-          alt="Valley View Room"
-          />
-          <div class="room-info">
-            <h3>Valley View Room</h3>
-            <p>
-              Spacious double room with a private balcony overlooking the
-              Tirthan Valley. Perfect for couples seeking a peaceful retreat.
-            </p>
-            <div class="room-amenities">
-              <span class="amenity-tag">Balcony</span>
-              <span class="amenity-tag">Mountain View</span>
-              <span class="amenity-tag">Hot Water</span>
-              <span class="amenity-tag">WiFi</span>
-            </div>
-            <div class="room-price">₹2,500 <span>/ night</span></div>
-            <a href="#booking" class="room-book">Book This Room</a>
-          </div>
-        </div>
-        <div class="room-card">
-          <img
-            src="assets/images/forest_cottage.jpg"
-            alt="Forest Cottage"
-          />
-          <div class="room-info">
-            <h3>Forest Cottage</h3>
-            <p>
-              A semi-detached wooden cottage nestled among apple and walnut
-              trees — intimate, rustic, and incredibly cosy.
-            </p>
-            <div class="room-amenities">
-              <span class="amenity-tag">Cottage</span>
-              <span class="amenity-tag">Private</span>
-              <span class="amenity-tag">Fireplace</span>
-              <span class="amenity-tag">Hot Water</span>
-            </div>
-            <div class="room-price">₹3,200 <span>/ night</span></div>
-            <a href="#booking" class="room-book">Book This Room</a>
-          </div>
-        </div>
-        <div class="room-card">
-          <img
-            src="assets/images/family_suite.jpg"
-            alt="Family Suite"
-          />
-          <div class="room-info">
-            <h3>Family Suite</h3>
-            <p>
-              A large interconnected suite ideal for families, with two
-              bedrooms, a sitting area, and a shared balcony with river views.
-            </p>
-            <div class="room-amenities">
-              <span class="amenity-tag">2 Bedrooms</span>
-              <span class="amenity-tag">River View</span>
-              <span class="amenity-tag">Sitting Area</span>
-              <span class="amenity-tag">WiFi</span>
-            </div>
-            <div class="room-price">₹4,500 <span>/ night</span></div>
-            <a href="#booking" class="room-book">Book This Room</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOD -->
-    <section class="food" id="food">
-      <div>
-        <p class="section-label">Food & Dining</p>
-        <h2 class="section-title">Flavours of the<br /><em>Mountains</em></h2>
-        <div class="section-divider"></div>
-        <p>
-          Our kitchen is the heart of the homestay. Every meal is prepared using
-          locally sourced vegetables, fresh dairy, and traditional recipes
-          passed down through generations.
-        </p>
-        <p>
-          We cater to all dietary preferences — just let us know when you book.
-          Planning a small celebration or a chill evening with drinks? We're
-          happy to help make it happen. 🥂
-        </p>
-        <div
-          class="menu-section-label"
-          style="
+      <p>
+        Our kitchen is the heart of the homestay. Every meal is prepared using
+        locally sourced vegetables, fresh dairy, and traditional recipes
+        passed down through generations.
+      </p>
+      <p>
+        We cater to all dietary preferences — just let us know when you book.
+        Planning a small celebration or a chill evening with drinks? We're
+        happy to help make it happen. 🥂
+      </p>
+      <div class="menu-section-label" style="
             font-size: 0.68rem;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--gold);
             margin-top: 1.5rem;
             margin-bottom: 0.5rem;
-          "
-        >
-          🌿 Vegetarian
+          ">
+        🌿 Vegetarian
+      </div>
+      <div class="menu-items">
+        <div class="menu-item">
+          <div class="menu-dot"></div>
+          Himachali Dham (festive thali)
         </div>
-        <div class="menu-items">
-          <div class="menu-item">
-            <div class="menu-dot"></div>
-            Himachali Dham (festive thali)
-          </div>
-          <div class="menu-item">
-            <div class="menu-dot"></div>
-            Siddu with ghee &amp; dal
-          </div>
-          <div class="menu-item">
-            <div class="menu-dot"></div>
-            Rajma Chawal (Kullu-style)
-          </div>
-          <div class="menu-item">
-            <div class="menu-dot"></div>
-            Aloo Palda (pahadi potato curry)
-          </div>
-          <div class="menu-item">
-            <div class="menu-dot"></div>
-            Garden-fresh salads &amp; juices
-          </div>
-          <div class="menu-item">
-            <div class="menu-dot"></div>
-            Pahadi chai &amp; homemade pickle
-          </div>
+        <div class="menu-item">
+          <div class="menu-dot"></div>
+          Siddu with ghee &amp; dal
         </div>
-        <div
-          class="menu-section-label"
-          style="
+        <div class="menu-item">
+          <div class="menu-dot"></div>
+          Rajma Chawal (Kullu-style)
+        </div>
+        <div class="menu-item">
+          <div class="menu-dot"></div>
+          Aloo Palda (pahadi potato curry)
+        </div>
+        <div class="menu-item">
+          <div class="menu-dot"></div>
+          Garden-fresh salads &amp; juices
+        </div>
+        <div class="menu-item">
+          <div class="menu-dot"></div>
+          Pahadi chai &amp; homemade pickle
+        </div>
+      </div>
+      <div class="menu-section-label" style="
             font-size: 0.68rem;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--gold);
             margin-top: 1.4rem;
             margin-bottom: 0.5rem;
-          "
-        >
-          🍖 Non-Vegetarian
+          ">
+        🍖 Non-Vegetarian
+      </div>
+      <div class="menu-items">
+        <div class="menu-item">
+          <div class="menu-dot" style="background: #c8696e"></div>
+          Fresh Tirthan trout curry with rice
         </div>
-        <div class="menu-items">
-          <div class="menu-item">
-            <div class="menu-dot" style="background: #c8696e"></div>
-            Fresh Tirthan trout curry with rice
-          </div>
-          <div class="menu-item">
-            <div class="menu-dot" style="background: #c8696e"></div>
-            Grilled river trout (catch of the day)
-          </div>
-          <div class="menu-item">
-            <div class="menu-dot" style="background: #c8696e"></div>
-            Pahadi mutton curry (slow-cooked, local spices)
-          </div>
-          <div class="menu-item">
-            <div class="menu-dot" style="background: #c8696e"></div>
-            Chicken curry with steamed rice
-          </div>
-          <div class="menu-item">
-            <div class="menu-dot" style="background: #c8696e"></div>
-            Egg bhurji &amp; parantha (breakfast)
-          </div>
-          <div class="menu-item">
-            <div class="menu-dot" style="background: #c8696e"></div>
-            Mutton khichdi (winter special)
-          </div>
+        <div class="menu-item">
+          <div class="menu-dot" style="background: #c8696e"></div>
+          Grilled river trout (catch of the day)
+        </div>
+        <div class="menu-item">
+          <div class="menu-dot" style="background: #c8696e"></div>
+          Pahadi mutton curry (slow-cooked, local spices)
+        </div>
+        <div class="menu-item">
+          <div class="menu-dot" style="background: #c8696e"></div>
+          Chicken curry with steamed rice
+        </div>
+        <div class="menu-item">
+          <div class="menu-dot" style="background: #c8696e"></div>
+          Egg bhurji &amp; parantha (breakfast)
+        </div>
+        <div class="menu-item">
+          <div class="menu-dot" style="background: #c8696e"></div>
+          Mutton khichdi (winter special)
         </div>
       </div>
-      <div class="food-imgs">
-        <img
-        src="assets/images/dish.png"  
-        alt="Indian food spread"
-        />
-      </div> 
-    </section>
+    </div>
+    <div class="food-imgs">
+      <img src="assets/images/dish.png" alt="Indian food spread" />
+    </div>
+  </section>
 
-    <!-- BOOKING -->
-    <section class="booking" id="booking">
-      <p class="section-label">Reservations</p>
-      <h2 class="section-title">Check <em>Availability</em></h2>
-      <div class="section-divider"></div>
-      <p style="font-size: 0.9rem; color: #666; font-weight: 300">
-        Fill in your details and we'll get back to you within a few hours to
-        confirm.
-      </p>
+  <!-- BOOKING -->
+  <section class="booking" id="booking">
+    <p class="section-label">Reservations</p>
+    <h2 class="section-title">Check <em>Availability</em></h2>
+    <div class="section-divider"></div>
+    <p style="font-size: 0.9rem; color: #666; font-weight: 300">
+      Fill in your details and we'll get back to you within a few hours to
+      confirm.
+    </p>
 
-      <!-- SUCCESS MESSAGE (hidden by default) -->
-      <div
-        id="booking-success"
-        style="
+    <!-- SUCCESS MESSAGE (hidden by default) -->
+    <div id="booking-success" style="
           display: none;
           margin-top: 2rem;
           background: #e6f4ea;
@@ -1454,334 +1553,301 @@
           margin-left: auto;
           margin-right: auto;
           text-align: center;
-        "
-      >
-        <p style="color: #2e5441; font-size: 0.95rem">
-          ✅ <strong>Booking request sent!</strong> We'll confirm availability
-          for your selected dates shortly via WhatsApp or email.
-        </p>
-      </div>
-
-      <form
-        id="booking-form"
-        action="https://formspree.io/f/YOUR_BOOKING_FORM_ID"
-        method="POST"
-        class="booking-form"
-        onsubmit="handleBookingSubmit(event)"
-      >
-        <div class="form-group">
-          <label for="checkin">Check-In</label>
-          <input type="date" id="checkin" name="check_in" required />
-        </div>
-        <div class="form-group">
-          <label for="checkout">Check-Out</label>
-          <input type="date" id="checkout" name="check_out" required />
-        </div>
-        <div class="form-group">
-          <label for="room">Room Type</label>
-          <select id="room" name="room_type" required>
-            <option value="">Select Room</option>
-            <option>Valley View Room</option>
-            <option>Forest Cottage</option>
-            <option>Family Suite</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="booking-name">Your Name</label>
-          <input
-            type="text"
-            id="booking-name"
-            name="name"
-            placeholder="Full name"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="booking-phone">Phone / WhatsApp</label>
-          <input
-            type="tel"
-            id="booking-phone"
-            name="phone"
-            placeholder="+91 XXXXX XXXXX"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="booking-guests">No. of Guests</label>
-          <select id="booking-guests" name="guests">
-            <option value="1">1 Guest</option>
-            <option value="2" selected>2 Guests</option>
-            <option value="3">3 Guests</option>
-            <option value="4">4 Guests</option>
-            <option value="5+">5+ Guests</option>
-          </select>
-        </div>
-        <button type="submit" class="form-submit" id="booking-btn">
-          Check Availability
-        </button>
-      </form>
-    </section>
-
-    <!-- NEARBY ATTRACTIONS -->
-    <section class="nearby" id="nearby">
-      <p class="section-label">Explore Around Us</p>
-      <h2 class="section-title">Your Perfect <em>Base Camp</em></h2>
-      <div class="section-divider"></div>
-      <p class="nearby-intro">
-        We are located in
-        <strong>Banjar, Kullu District, Himachal Pradesh</strong> — the heart of
-        Tirthan Valley. Everything magical about this region is right at your
-        doorstep.
+        ">
+      <p style="color: #2e5441; font-size: 0.95rem">
+        ✅ <strong>Booking request sent!</strong> We'll confirm availability
+        for your selected dates shortly via WhatsApp or email.
       </p>
+    </div>
 
-      <div class="reach-strip">
-        <div class="reach-item">
-          <span class="reach-icon">✈️</span>
-          <div>
-            <div class="reach-label">By Air</div>
-            <div class="reach-val">
-              Bhuntar Airport (Kullu-Manali) — ~50 km · 2 hrs by taxi
-            </div>
-          </div>
-        </div>
-        <div class="reach-item">
-          <span class="reach-icon">🚌</span>
-          <div>
-            <div class="reach-label">Overnight Volvo Bus</div>
-            <div class="reach-val">
-              Chandigarh / Delhi → Aut → Banjar. Get off at Aut, taxi ~₹800
-            </div>
-          </div>
-        </div>
-        <div class="reach-item">
-          <span class="reach-icon">🚗</span>
-          <div>
-            <div class="reach-label">By Road from Chandigarh</div>
-            <div class="reach-val">
-              NH-3 via Mandi → Aut → Larji → Banjar · ~270 km · 7–8 hrs
-            </div>
-          </div>
-        </div>
-        <div class="reach-item">
-          <span class="reach-icon">⚠️</span>
-          <div>
-            <div class="reach-label">Key Landmark</div>
-            <div class="reach-val">
-              At Aut Tunnel — DO NOT enter. Take right road towards Larji →
-              Banjar
-            </div>
+    <form id="booking-form" action="https://formspree.io/f/xlgoerry" method="POST" class="booking-form"
+      onsubmit="handleBookingSubmit(event)">
+      <div class="form-group">
+        <label for="checkin">Check-In</label>
+        <input type="date" id="checkin" name="check_in" required />
+      </div>
+      <div class="form-group">
+        <label for="checkout">Check-Out</label>
+        <input type="date" id="checkout" name="check_out" required />
+      </div>
+      <div class="form-group">
+        <label for="room">Room Type</label>
+        <select id="room" name="room_type" required>
+          <option value="">Select Room</option>
+          <option>Valley View Room</option>
+          <option>Forest Cottage</option>
+          <option>Family Suite</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="booking-name">Your Name</label>
+        <input type="text" id="booking-name" name="name" placeholder="Full name" required />
+      </div>
+      <div class="form-group">
+        <label for="booking-phone">Phone / WhatsApp</label>
+        <input type="tel" id="booking-phone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+      </div>
+      <div class="form-group">
+        <label for="booking-guests">No. of Guests</label>
+        <select id="booking-guests" name="guests">
+          <option value="1">1 Guest</option>
+          <option value="2" selected>2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5+">5+ Guests</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit" id="booking-btn">
+        Check Availability
+      </button>
+    </form>
+  </section>
+
+  <!-- NEARBY ATTRACTIONS -->
+  <section class="nearby" id="nearby">
+    <p class="section-label">Explore Around Us</p>
+    <h2 class="section-title">Your Perfect <em>Base Camp</em></h2>
+    <div class="section-divider"></div>
+    <p class="nearby-intro">
+      We are located in
+      <strong>Banjar, Kullu District, Himachal Pradesh</strong> — the heart of
+      Tirthan Valley. Everything magical about this region is right at your
+      doorstep.
+    </p>
+
+    <div class="reach-strip">
+      <div class="reach-item">
+        <span class="reach-icon">✈️</span>
+        <div>
+          <div class="reach-label">By Air</div>
+          <div class="reach-val">
+            Bhuntar Airport (Kullu-Manali) — ~50 km · 2 hrs by taxi
           </div>
         </div>
       </div>
-
-      <h3 class="nearby-subtitle">Places to Visit Near the Homestay</h3>
-      <div class="attractions-grid">
-        <div class="attraction-card featured">
-          <div class="attr-badge">UNESCO World Heritage</div>
-          <div class="attr-emoji">🏔️</div>
-          <div class="attr-dist">
-            ~15 km · Accessible from Banjar & Gushaini
-          </div>
-          <h3>Great Himalayan National Park</h3>
-          <p>
-            A UNESCO World Heritage Site spanning 754 sq km, home to Snow
-            Leopards, Western Tragopan, Himalayan Bear, Blue Sheep and 375+
-            species. Trek into pristine alpine forests from Shairopa or Gushaini
-            gates. One of India's finest protected wilderness areas.
-          </p>
-          <div class="attr-tags">
-            <span>Trekking</span><span>Wildlife</span><span>UNESCO</span
-            ><span>Photography</span>
-          </div>
-        </div>
-
-        <div class="attraction-card">
-          <div class="attr-emoji">🏰</div>
-          <div class="attr-dist">~7 km from Banjar</div>
-          <h3>Chehni Kothi Fort Tower</h3>
-          <p>
-            A 1,500-year-old fort tower built by King Rana Dhadhia — the tallest
-            traditional Kath-Kuni structure in Himachal Pradesh. Originally 7
-            storeys, partially damaged in the 1905 earthquake. Trek ~1 hr from
-            Shringa Rishi Temple through apple orchards and pine forests.
-          </p>
-          <div class="attr-tags">
-            <span>History</span><span>Architecture</span><span>Trek</span>
-          </div>
-        </div>
-
-        <div class="attraction-card">
-          <div class="attr-emoji">🙏</div>
-          <div class="attr-dist">~3 km from Banjar · on Jibhi road</div>
-          <h3>Shringa Rishi Temple</h3>
-          <p>
-            The ruling deity of Banjar Valley. A stunning three-storey wooden
-            pagoda-style temple dedicated to Sage Rishyashringa. Starting point
-            for the Chehni Kothi trail. Walk 15 minutes from the road. Serene
-            and deeply important to locals.
-          </p>
-          <div class="attr-tags">
-            <span>Temple</span><span>Culture</span><span>Heritage</span>
-          </div>
-        </div>
-
-        <div class="attraction-card">
-          <div class="attr-emoji">🌊</div>
-          <div class="attr-dist">~8 km · 30-min trek from Gushaini</div>
-          <h3>Chhoie Waterfall</h3>
-          <p>
-            The highest waterfall in Tirthan Valley — a spectacular 50-metre
-            cascade set deep in deodar and oak forest. A 30-min moderate trek
-            from Gushaini. Log bridges and stone paths make it accessible. Best
-            visited in summer and monsoon.
-          </p>
-          <div class="attr-tags">
-            <span>Waterfall</span><span>Trek</span><span>Nature</span>
-          </div>
-        </div>
-
-        <div class="attraction-card">
-          <div class="attr-emoji">🏡</div>
-          <div class="attr-dist">~8–10 km from Banjar</div>
-          <h3>Jibhi Village</h3>
-          <p>
-            Called "Mini Thailand" for its lush beauty. Famous for
-            Victorian-style wooden tree houses, a charming waterfall, and
-            laid-back Himachali vibe. Gateway to Jalori Pass, Serolsar Lake, and
-            Chehni Kothi. Popular with couples and backpackers.
-          </p>
-          <div class="attr-tags">
-            <span>Village</span><span>Waterfall</span><span>Scenic</span>
-          </div>
-        </div>
-
-        <div class="attraction-card">
-          <div class="attr-emoji">⛰️</div>
-          <div class="attr-dist">~25 km · via Jibhi</div>
-          <h3>Jalori Pass</h3>
-          <p>
-            At 10,800 ft (3,120 m), this high-altitude pass connects Banjar to
-            Shimla through stunning pine forests. Open April–November. Base for
-            treks to Serolsar Lake and Raghupur Fort. Panoramic 360° Himalayan
-            views. Skiing near Shoja in winter.
-          </p>
-          <div class="attr-tags">
-            <span>Pass</span><span>Scenic Drive</span><span>Snow</span
-            ><span>Trek Base</span>
-          </div>
-        </div>
-
-        <div class="attraction-card">
-          <div class="attr-emoji">🏞️</div>
-          <div class="attr-dist">~31 km · 6 km trek from Jalori Pass</div>
-          <h3>Serolsar (Saryolsar) Lake</h3>
-          <p>
-            A sacred high-altitude lake in oak and cedar forest, 6 km trek from
-            Jalori Pass. Home to the revered Budhi Nagin temple. Crystal-clear,
-            snow-fed waters. Perfect for beginner trekkers with stunning
-            Himalayan scenery all around.
-          </p>
-          <div class="attr-tags">
-            <span>Lake</span><span>Temple</span><span>Easy Trek</span>
-          </div>
-        </div>
-
-        <div class="attraction-card">
-          <div class="attr-emoji">🏯</div>
-          <div class="attr-dist">~28 km · 3 km trek from Jalori Pass</div>
-          <h3>Raghupur Fort</h3>
-          <p>
-            Ruins of an ancient Mandi dynasty fort on a meadow above Jalori
-            Pass. The 360° views of Dhauladhar and Himalayan ranges are
-            breathtaking. Easy 3 km walk from the pass — popular for camping in
-            summer. Mystery surrounds its exact origin and age.
-          </p>
-          <div class="attr-tags">
-            <span>Fort Ruins</span><span>Camping</span
-            ><span>Panoramic Views</span>
-          </div>
-        </div>
-
-        <div class="attraction-card">
-          <div class="attr-emoji">🎣</div>
-          <div class="attr-dist">~10 km · Gushaini village</div>
-          <h3>Tirthan River & Gushaini</h3>
-          <p>
-            The crystal-clear Tirthan River runs through the valley — famous for
-            brown trout fishing (permit required). Gushaini sits at the
-            confluence of Tirthan and Flachan rivers, gateway to GHNP treks.
-            Ideal for riverside walks, picnics, and peaceful mornings.
-          </p>
-          <div class="attr-tags">
-            <span>Fishing</span><span>River</span><span>Trek Gateway</span>
+      <div class="reach-item">
+        <span class="reach-icon">🚌</span>
+        <div>
+          <div class="reach-label">Overnight Volvo Bus</div>
+          <div class="reach-val">
+            Chandigarh / Delhi → Aut → Banjar. Get off at Aut, taxi ~₹800
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="gallery" id="gallery">
-      <p class="section-label">Gallery</p>
-      <h2 class="section-title">Glimpses of <em>Tirthan</em></h2>
-      <div class="section-divider"></div>
-      <div class="gallery-grid">
-        <img
-          src="assets/images/tirthan_valley.jpg"
-          alt="Tirthan valley"
-        />
-        <img
-          src="assets/images/entrance.jpg"
-          alt="Homestay entrance"
-        />
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <div>
-        <p class="section-label">Get In Touch</p>
-        <h2 class="section-title">Plan Your<br /><em>Visit</em></h2>
-        <div class="section-divider" style="background: var(--gold)"></div>
-        <div class="contact-info">
-          <div class="contact-item">
-            <span class="contact-icon">📍</span>
-            <div>
-              <h4>Address</h4>
-              <p>
-                Tirthan Mountainview Homestay<br />Banjar, Kullu District<br />Himachal
-                Pradesh — 175123
-              </p>
-            </div>
+      <div class="reach-item">
+        <span class="reach-icon">🚗</span>
+        <div>
+          <div class="reach-label">By Road from Chandigarh</div>
+          <div class="reach-val">
+            NH-3 via Mandi → Aut → Larji → Banjar · ~270 km · 7–8 hrs
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">📞</span>
-            <div>
-              <h4>Phone & WhatsApp</h4>
-              <p style="margin-bottom: 0.4rem">
-                <span
-                  style="
+        </div>
+      </div>
+      <div class="reach-item">
+        <span class="reach-icon">⚠️</span>
+        <div>
+          <div class="reach-label">Key Landmark</div>
+          <div class="reach-val">
+            At Aut Tunnel — DO NOT enter. Take right road towards Larji →
+            Banjar
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="nearby-subtitle">Places to Visit Near the Homestay</h3>
+    <div class="attractions-grid">
+      <div class="attraction-card featured">
+        <div class="attr-badge">UNESCO World Heritage</div>
+        <div class="attr-emoji">🏔️</div>
+        <div class="attr-dist">
+          ~15 km · Accessible from Banjar & Gushaini
+        </div>
+        <h3>Great Himalayan National Park</h3>
+        <p>
+          A UNESCO World Heritage Site spanning 754 sq km, home to Snow
+          Leopards, Western Tragopan, Himalayan Bear, Blue Sheep and 375+
+          species. Trek into pristine alpine forests from Shairopa or Gushaini
+          gates. One of India's finest protected wilderness areas.
+        </p>
+        <div class="attr-tags">
+          <span>Trekking</span><span>Wildlife</span><span>UNESCO</span><span>Photography</span>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <div class="attr-emoji">🏰</div>
+        <div class="attr-dist">~7 km from Banjar</div>
+        <h3>Chehni Kothi Fort Tower</h3>
+        <p>
+          A 1,500-year-old fort tower built by King Rana Dhadhia — the tallest
+          traditional Kath-Kuni structure in Himachal Pradesh. Originally 7
+          storeys, partially damaged in the 1905 earthquake. Trek ~1 hr from
+          Shringa Rishi Temple through apple orchards and pine forests.
+        </p>
+        <div class="attr-tags">
+          <span>History</span><span>Architecture</span><span>Trek</span>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <div class="attr-emoji">🙏</div>
+        <div class="attr-dist">~3 km from Banjar · on Jibhi road</div>
+        <h3>Shringa Rishi Temple</h3>
+        <p>
+          The ruling deity of Banjar Valley. A stunning three-storey wooden
+          pagoda-style temple dedicated to Sage Rishyashringa. Starting point
+          for the Chehni Kothi trail. Walk 15 minutes from the road. Serene
+          and deeply important to locals.
+        </p>
+        <div class="attr-tags">
+          <span>Temple</span><span>Culture</span><span>Heritage</span>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <div class="attr-emoji">🌊</div>
+        <div class="attr-dist">~8 km · 30-min trek from Gushaini</div>
+        <h3>Chhoie Waterfall</h3>
+        <p>
+          The highest waterfall in Tirthan Valley — a spectacular 50-metre
+          cascade set deep in deodar and oak forest. A 30-min moderate trek
+          from Gushaini. Log bridges and stone paths make it accessible. Best
+          visited in summer and monsoon.
+        </p>
+        <div class="attr-tags">
+          <span>Waterfall</span><span>Trek</span><span>Nature</span>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <div class="attr-emoji">🏡</div>
+        <div class="attr-dist">~8–10 km from Banjar</div>
+        <h3>Jibhi Village</h3>
+        <p>
+          Called "Mini Thailand" for its lush beauty. Famous for
+          Victorian-style wooden tree houses, a charming waterfall, and
+          laid-back Himachali vibe. Gateway to Jalori Pass, Serolsar Lake, and
+          Chehni Kothi. Popular with couples and backpackers.
+        </p>
+        <div class="attr-tags">
+          <span>Village</span><span>Waterfall</span><span>Scenic</span>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <div class="attr-emoji">⛰️</div>
+        <div class="attr-dist">~25 km · via Jibhi</div>
+        <h3>Jalori Pass</h3>
+        <p>
+          At 10,800 ft (3,120 m), this high-altitude pass connects Banjar to
+          Shimla through stunning pine forests. Open April–November. Base for
+          treks to Serolsar Lake and Raghupur Fort. Panoramic 360° Himalayan
+          views. Skiing near Shoja in winter.
+        </p>
+        <div class="attr-tags">
+          <span>Pass</span><span>Scenic Drive</span><span>Snow</span><span>Trek Base</span>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <div class="attr-emoji">🏞️</div>
+        <div class="attr-dist">~31 km · 6 km trek from Jalori Pass</div>
+        <h3>Serolsar (Saryolsar) Lake</h3>
+        <p>
+          A sacred high-altitude lake in oak and cedar forest, 6 km trek from
+          Jalori Pass. Home to the revered Budhi Nagin temple. Crystal-clear,
+          snow-fed waters. Perfect for beginner trekkers with stunning
+          Himalayan scenery all around.
+        </p>
+        <div class="attr-tags">
+          <span>Lake</span><span>Temple</span><span>Easy Trek</span>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <div class="attr-emoji">🏯</div>
+        <div class="attr-dist">~28 km · 3 km trek from Jalori Pass</div>
+        <h3>Raghupur Fort</h3>
+        <p>
+          Ruins of an ancient Mandi dynasty fort on a meadow above Jalori
+          Pass. The 360° views of Dhauladhar and Himalayan ranges are
+          breathtaking. Easy 3 km walk from the pass — popular for camping in
+          summer. Mystery surrounds its exact origin and age.
+        </p>
+        <div class="attr-tags">
+          <span>Fort Ruins</span><span>Camping</span><span>Panoramic Views</span>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <div class="attr-emoji">🎣</div>
+        <div class="attr-dist">~10 km · Gushaini village</div>
+        <h3>Tirthan River & Gushaini</h3>
+        <p>
+          The crystal-clear Tirthan River runs through the valley — famous for
+          brown trout fishing (permit required). Gushaini sits at the
+          confluence of Tirthan and Flachan rivers, gateway to GHNP treks.
+          Ideal for riverside walks, picnics, and peaceful mornings.
+        </p>
+        <div class="attr-tags">
+          <span>Fishing</span><span>River</span><span>Trek Gateway</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <p class="section-label">Gallery</p>
+    <h2 class="section-title">Glimpses of <em>Tirthan</em></h2>
+    <div class="section-divider"></div>
+    <div class="gallery-grid">
+      <img src="assets/images/tirthan_valley.jpg" alt="Tirthan valley" />
+      <img src="assets/images/entrance.jpg" alt="Homestay entrance" />
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div>
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Plan Your<br /><em>Visit</em></h2>
+      <div class="section-divider" style="background: var(--gold)"></div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <h4>Address</h4>
+            <p>
+              Tirthan Mountainview Homestay<br />Banjar, Kullu District<br />Himachal
+              Pradesh — 175123
+            </p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <h4>Phone & WhatsApp</h4>
+            <p style="margin-bottom: 0.4rem">
+              <span style="
                     color: var(--gold);
                     font-size: 0.72rem;
                     letter-spacing: 0.08em;
                     text-transform: uppercase;
-                  "
-                  >Neelam Chaudhary</span
-                ><br />
-                062304 10369
-              </p>
-              <p style="margin-bottom: 0.4rem">
-                <span
-                  style="
+                  ">Neelam Chaudhary</span><br />
+              062304 10369
+            </p>
+            <p style="margin-bottom: 0.4rem">
+              <span style="
                     color: var(--gold);
                     font-size: 0.72rem;
                     letter-spacing: 0.08em;
                     text-transform: uppercase;
-                  "
-                  >Lata Manali</span
-                ><br />
-                +91 94595 56340
-              </p>
-              <!-- <p>
+                  ">Lata Manali</span><br />
+              +91 94595 56340
+            </p>
+            <!-- <p>
                 <span
                   style="
                     color: var(--gold);
@@ -1795,159 +1861,136 @@
                   >Number not available</span
                 >
               </p> -->
-            </div>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">✉️</span>
-            <div>
-              <h4>Email</h4>
-              <p>
-                <a
-                  href="/cdn-cgi/l/email-protection"
-                  class="__cf_email__"
-                  data-cfemail="81f2f5e0f8c1f5e8f3f5e9e0efeceef4eff5e0e8eff7e8e4f6afe2eeec"
-                  >[email&#160;protected]</a
-                >
-              </p>
-            </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <div>
+            <h4>Email</h4>
+            <p>
+              <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="81f2f5e0f8c1f5e8f3f5e9e0efeceef4eff5e0e8eff7e8e4f6afe2eeec">[email&#160;protected]</a>
+            </p>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">🕐</span>
-            <div>
-              <h4>Check-in / Check-out</h4>
-              <p>Check-in: 12:00 PM · Check-out: 11:00 AM</p>
-            </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🕐</span>
+          <div>
+            <h4>Check-in / Check-out</h4>
+            <p>Check-in: 12:00 PM · Check-out: 11:00 AM</p>
           </div>
         </div>
       </div>
-      <div>
-        <p
-          style="
+    </div>
+    <div>
+      <p style="
             font-size: 0.72rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--gold);
             margin-bottom: 1.5rem;
-          "
-        >
-          Send a Message
-        </p>
+          ">
+        Send a Message
+      </p>
 
-        <!-- SUCCESS STATE -->
-        <div
-          id="contact-success"
-          style="
+      <!-- SUCCESS STATE -->
+      <div id="contact-success" style="
             display: none;
             background: rgba(200, 169, 110, 0.15);
             border: 1px solid rgba(200, 169, 110, 0.4);
             border-radius: 4px;
             padding: 1.4rem;
             text-align: center;
-          "
-        >
-          <p style="color: var(--gold); font-size: 0.95rem">
-            🙏 <strong>Message received!</strong><br /><span
-              style="font-weight: 300; font-size: 0.88rem"
-              >We'll get back to you within a few hours.</span
-            >
-          </p>
-        </div>
-
-        <form
-          id="contact-form"
-          action="https://formspree.io/f/xlgoerry"
-          method="POST"
-          class="contact-form"
-          onsubmit="handleContactSubmit(event)"
-        >
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            required
-          />
-          <input type="tel" name="phone" placeholder="Phone / WhatsApp" />
-          <textarea
-            name="message"
-            placeholder="Tell us about your travel plans, number of guests, special requests…"
-            required
-          ></textarea>
-          <button type="submit" class="contact-submit" id="contact-btn">
-            Send Message
-          </button>
-        </form>
+          ">
+        <p style="color: var(--gold); font-size: 0.95rem">
+          🙏 <strong>Message received!</strong><br /><span style="font-weight: 300; font-size: 0.88rem">We'll get back
+            to you within a few hours.</span>
+        </p>
       </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <p>
-        © 2025 <strong>Tirthan Mountainview Homestay</strong> · Banjar, Himachal
-        Pradesh · Made with <span class="heart">♥</span> in the mountains
-      </p>
-    </footer>
+      <form id="contact-form" action="https://formspree.io/f/xlgoerry" method="POST" class="contact-form"
+        onsubmit="handleContactSubmit(event)">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone / WhatsApp" />
+        <textarea name="message" placeholder="Tell us about your travel plans, number of guests, special requests…"
+          required></textarea>
+        <button type="submit" class="contact-submit" id="contact-btn">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
 
-    <script>
-      // ── BOOKING FORM (Formspree) ──
-      async function handleBookingSubmit(e) {
-        e.preventDefault();
-        const btn = document.getElementById("booking-btn");
-        const form = document.getElementById("booking-form");
-        btn.textContent = "Sending…";
-        btn.disabled = true;
-        try {
-          const res = await fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: { Accept: "application/json" },
-          });
-          if (res.ok) {
-            form.style.display = "none";
-            document.getElementById("booking-success").style.display = "block";
-          } else {
-            btn.textContent = "Try Again";
-            btn.disabled = false;
-            alert(
-              "Something went wrong. Please try again or contact us directly.",
-            );
-          }
-        } catch {
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2025 <strong>Tirthan Mountainview Homestay</strong> · Banjar, Himachal
+      Pradesh · Made with <span class="heart">♥</span> in the mountains
+    </p>
+  </footer>
+
+  <script>
+    // ── BOOKING FORM (Formspree) ──
+    async function handleBookingSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById("booking-btn");
+      const form = document.getElementById("booking-form");
+      btn.textContent = "Sending…";
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        if (res.ok) {
+          form.style.display = "none";
+          document.getElementById("booking-success").style.display = "block";
+        } else {
           btn.textContent = "Try Again";
           btn.disabled = false;
-          alert("Network error. Please check your connection and try again.");
+          alert(
+            "Something went wrong. Please try again or contact us directly.",
+          );
         }
+      } catch {
+        btn.textContent = "Try Again";
+        btn.disabled = false;
+        alert("Network error. Please check your connection and try again.");
       }
+    }
 
-      // ── CONTACT FORM (Formspree) ──
-      async function handleContactSubmit(e) {
-        e.preventDefault();
-        const btn = document.getElementById("contact-btn");
-        const form = document.getElementById("contact-form");
-        btn.textContent = "Sending…";
-        btn.disabled = true;
-        try {
-          const res = await fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: { Accept: "application/json" },
-          });
-          if (res.ok) {
-            form.style.display = "none";
-            document.getElementById("contact-success").style.display = "block";
-          } else {
-            btn.textContent = "Try Again";
-            btn.disabled = false;
-            alert(
-              "Something went wrong. Please try again or reach us on WhatsApp.",
-            );
-          }
-        } catch {
+    // ── CONTACT FORM (Formspree) ──
+    async function handleContactSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById("contact-btn");
+      const form = document.getElementById("contact-form");
+      btn.textContent = "Sending…";
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        if (res.ok) {
+          form.style.display = "none";
+          document.getElementById("contact-success").style.display = "block";
+        } else {
           btn.textContent = "Try Again";
           btn.disabled = false;
-          alert("Network error. Please check your connection and try again.");
+          alert(
+            "Something went wrong. Please try again or reach us on WhatsApp.",
+          );
         }
+      } catch {
+        btn.textContent = "Try Again";
+        btn.disabled = false;
+        alert("Network error. Please check your connection and try again.");
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
